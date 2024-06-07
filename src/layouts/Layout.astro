@@ -1,4 +1,5 @@
 ---
+import LinkButton from "../components/LinkButton.astro";
 import Navbar from "../components/Navbar.astro";
 import ToggleTheme from "../components/Toggle";
 
@@ -22,8 +23,9 @@ const { title, description } = Astro.props;
   </head>
   <body class="bg-slate-100 dark:bg-zinc-900">
     <main class="relative w-full flex flex-col items-center">
-      <header class="fixed w-full p-4 z-10">
-        <ToggleTheme client:only />
+      <header class="fixed flex justify-between items-center w-full p-4 z-10">
+        <ToggleTheme client:load />
+        <LinkButton href="https://www.google.com/">Download CV</LinkButton>
       </header>
 
       <!-- Page Content -->
