@@ -1,6 +1,6 @@
 ---
 import LinkButton from "../components/LinkButton.astro";
-import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
 import ToggleTheme from "../components/Toggle";
 
 interface Props {
@@ -33,7 +33,7 @@ const { title, description } = Astro.props;
 
       <!-- Page Content -->
       <div class="w-full h-full flex items-center">
-        <Navbar />
+        <Sidebar />
         <section
           class="relative w-full flex flex-col items-center justify-center md:gap-12 gap-6 min-h-screen">
           <slot />

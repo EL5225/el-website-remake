@@ -1,7 +1,47 @@
 ---
+import ArrowDown from "../components/icons/ArrowDown.astro";
+import Gmail from "../components/icons/Gmail.astro";
+import Instagram from "../components/icons/Instagram.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="EL | Contact" description="This is my contact">
-  <h1 class="text-4xl font-bold dark:text-slate-200">My Contact</h1>
+  <h1
+    class="md:text-4xl text-2xl font-bold dark:text-slate-200 md:mb-4 sm:mb-6 mb-10">
+    You can find me here
+  </h1>
+
+  <div class="flex items-center gap-10">
+    <ArrowDown bounce />
+    <ArrowDown bounce />
+    <ArrowDown bounce />
+  </div>
+
+  <ul aria-label="contact" title="My Contact" class="flex gap-8 items-center">
+    <li>
+      <a
+        href="mailto:luthfiramadhan155@gmail.com?subjek=Subjek Email&body=Isi Pesan"
+        target="_blank"
+        rel="noopener">
+        <Gmail />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/el-luthfi/"
+        target="_blank"
+        rel="noopener">
+        <LinkedIn />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/luthfigupix/"
+        target="_blank"
+        rel="noopener">
+        <Instagram />
+      </a>
+    </li>
+  </ul>
 </Layout>
