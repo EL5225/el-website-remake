@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-slate-100 dark:bg-zinc-900">
+  <body class="bg-slate-100 dark:bg-zinc-900 overflow-hidden">
     <main class="relative w-full flex flex-col items-center">
       <header class="fixed flex justify-between items-center w-full p-4 z-10">
         <ToggleTheme client:load />
