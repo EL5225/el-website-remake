@@ -1,7 +1,32 @@
 ---
+import Github from "../components/icons/Github.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="EL | About" description="This is about me">
-  <h1 class="text-4xl font-bold dark:text-slate-200">About Me</h1>
+  <h1 class="md:text-4xl text-2xl font-bold dark:text-slate-200 md:mt-0 mt-10">
+    About Me
+  </h1>
+
+  <article
+    class="w-full px-8 sm:px-32 text-sm flex flex-col sm:text-base lg:text-xl gap-6 font-semibold text-justify dark:text-slate-200">
+    <p>Hi there! I'm Muhammad Luthfi Ramadhan, a Front-End Web Developer.</p>
+
+    <p>
+      My journey in the world of web programming development is driven by an
+      insatiable curiosity. I am particularly passionate about front-end web
+      development, and I have cultivated my skills using technologies like
+      TailwindCSS, JavaScript, and TypeScript, mainly within the React and
+      NextJS frameworks.
+    </p>
+
+    <p>
+      If you're interested, you can explore some of the projects I've worked on
+      over the past few years on my GitHub profile.
+    </p>
+  </article>
+
+  <a href="https://github.com/EL5225" target="_blank" rel="noopener">
+    <Github />
+  </a>
 </Layout>
