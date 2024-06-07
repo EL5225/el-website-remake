@@ -1,0 +1,25 @@
+---
+import Home from "./icons/Home.astro";
+import About from "./icons/About.astro";
+import Contact from "./icons/Contact.astro";
+---
+
+<aside class="absolute py-8 group z-20">
+  <div
+    class="w-20 h-56 rounded-full bg-black dark:bg-slate-200 -translate-x-3/4 group-hover:translate-x-2 transition-all duration-300">
+    <ul class="h-full flex flex-col items-center justify-around">
+      <li class="text-white text-2xl font-semibold">
+        <a aria-label="Home Page" title="Home Page" href="/"><Home /></a>
+      </li>
+      <li class="text-white text-2xl font-semibold">
+        <a aria-label="About Page" title="About Page" href="/about"><About /></a
+        >
+      </li>
+      <li class="text-white text-2xl font-semibold">
+        <a aria-label="Contact Page" title="Contact Page" href="/contact"
+          ><Contact /></a
+        >
+      </li>
+    </ul>
+  </div>
+</aside>

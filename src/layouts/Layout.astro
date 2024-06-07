@@ -1,0 +1,71 @@
+---
+import Navbar from "../components/Navbar.astro";
+import ToggleTheme from "../components/Toggle";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-100 dark:bg-zinc-900">
+    <main class="relative w-full flex flex-col items-center">
+      <header class="fixed w-full p-4 z-10">
+        <ToggleTheme client:only />
+      </header>
+
+      <!-- Page Content -->
+      <div class="w-full h-full flex items-center">
+        <Navbar />
+        <section
+          class="relative w-full flex items-center justify-center min-h-screen">
+          <slot />
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-Regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+</style>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
