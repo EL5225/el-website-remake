@@ -15,10 +15,24 @@ const { title, description } = Astro.props;
 <html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/letter-l.svg" />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="canonical" content={Astro.url} />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/foto.webp" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/images/foto.webp" />
+
+    <link rel="icon" type="image/svg+xml" href="/letter-l.svg" />
     <title>{title}</title>
   </head>
   <body class="bg-slate-100 dark:bg-zinc-900">
