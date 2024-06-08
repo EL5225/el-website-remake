@@ -1,7 +1,7 @@
 ---
-import LinkButton from "../components/LinkButton.astro";
 import Sidebar from "../components/Sidebar.astro";
-import ToggleTheme from "../components/Toggle";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -23,14 +23,7 @@ const { title, description } = Astro.props;
   </head>
   <body class="bg-slate-100 dark:bg-zinc-900">
     <main class="relative w-full flex flex-col items-center overflow-hidden">
-      <header class="fixed flex justify-between items-center w-full p-4 z-10">
-        <ToggleTheme client:load />
-        <LinkButton
-          href="https://drive.google.com/file/d/1cs8_qRgdTLPZ6Suha3YwD1XkAYOPzss2/view"
-          >Download CV</LinkButton
-        >
-      </header>
-
+      <Header />
       <!-- Page Content -->
       <div class="w-full h-full flex items-center">
         <Sidebar />
@@ -39,6 +32,8 @@ const { title, description } = Astro.props;
           <slot />
         </section>
       </div>
+
+      <Footer />
     </main>
   </body>
 </html>
